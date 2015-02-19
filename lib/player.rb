@@ -1,15 +1,18 @@
 class Player
-	attr_accessor :name, :board
+
+  attr_reader :name
+  attr_accessor :board
 
   def initialize(name)
     @name = name
   end
 
-	def has_board?
-		!@board.nil?
-	end
+  def lost?
+    !board.floating_ships?
+  end
 
-	def receive_shot(coordinate)
-		board.shoot_at(coordinate)
-	end
+  def receive_shot(coordinate)
+    board.shoot_at(coordinate)
+  end
+
 end

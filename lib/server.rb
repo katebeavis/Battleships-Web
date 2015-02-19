@@ -9,7 +9,9 @@ require_relative 'water'
 class Battleships < Sinatra::Base
 
   game = Game.new
-  board = Board.new(Cell)
+  board = Board.new(size: 2, content: Cell)
+  board.grid.each{|cell| cell.last.content = Water.new}
+  water = Water.new
 
   get '/' do
     erb :index
@@ -39,6 +41,9 @@ class Battleships < Sinatra::Base
   end
 
   post "/battleship" do
+    @board = board
+    @coordinate = params[:coordinate].to_sym
+    @message = @board.shoot_at(@coordinate)
     erb :battleship
   end
   

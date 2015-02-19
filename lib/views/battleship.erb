@@ -1,40 +1,14 @@
-<table border="2" width="250" cellpadding="10" cellspacing="5" bgcolor="#efefef">
-  <% @table.each do |row| %>
-    <tr>
-      <% row.each do |content| %>
-        <td><%= content %></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
-
-<!-- <head> 
-  <style> 
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-    }
-    th,td {
-      padding: 5px;
-    }
-  </style>
-</head>
 
 
-<table>
-  <tr>
-    <th> </th>
-    <th>A</th>
-    <th>B</th>
-  </tr>
-  <tr>
-    <td> </td>
-    <td>1</td>
-    <td>2</td>
-  </tr>
-</table> -->
+
+
+
+
+<%= @table %>
 
 <form action='/battleship' method="post">
-<input type="coordinate" value="coordinate">
+<input type="coordinate" name="coordinate">
 <input type="submit" value="submit">
 </form>
+
+<div><%= @message %></div>
