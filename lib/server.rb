@@ -36,7 +36,8 @@ class Battleships < Sinatra::Base
   end
 
   get "/battleship" do
-    @table = board.grid
+    @table = board.rows
+    @ship = Ship.new(1)
     erb :battleship
   end
 

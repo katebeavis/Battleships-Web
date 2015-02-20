@@ -27,7 +27,7 @@ When(/^I click on "(.*?)"$/) do |link|
 end
 
 Then(/^I should be "(.*?)"$/) do |arg1|
-  page.should have_content("Please enter a name")
+  page.should have_content("Please enter a name:")
 end
 
 #Scenario: Start playing

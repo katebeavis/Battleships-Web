@@ -1,11 +1,20 @@
+<table border="2" cellpadding="5" cellspacing="5">
+    <th width="15"></th>
+    <% @table.each.with_index(1) do |row, index| %>
+    <th><%= (index + 64).chr %></th>
+    <% end %>
+    <% @table.each.with_index(1) do |row, index| %>
+    <tr>
+    <th><%= index %></th>
+    <% row.each.with_index(1) do |content, index| %>
+    <td><%= content %></td>
+      <% end %>
+      </tr>
+      <% end %>
+</table>
 
 
-
-
-
-
-<%= @table %>
-
+<div>Please enter the coordinates of your shot:</div>
 <form action='/battleship' method="post">
 <input type="coordinate" name="coordinate">
 <input type="submit" value="submit">

@@ -12,7 +12,7 @@ Feature: Starting the game
  	Given I am on the player page
  	And I don't type a "name"
  	When I click on "submit"
- 	Then I should see "Please enter a name"
+ 	Then I should see "Please enter a name:"
 
  Scenario: Start playing
   Given I visit the player page

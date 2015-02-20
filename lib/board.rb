@@ -39,4 +39,8 @@ class Board
     !ship_cells.map(&:content).all?(&:sunk?)
   end
 
+  def rows
+  	grid.values.each_slice(2).map {|row| row}
+  end
+
 end
